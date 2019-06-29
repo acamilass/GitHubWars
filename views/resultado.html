@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/resultado.css">
+
+    <title>GitHub Wars - Resultado</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="first-user">
+            <div class="user" id="user1">
+                <img class="profile-pic" id="img_user1"/>
+                <!-- <img class="trophy" src="https://i.pinimg.com/originals/41/36/16/41361625cc44df07f81a620eac766468.png"
+                    alt="" srcset=""> -->
+            </div>
+            <div class="card-infos">
+                <table>
+                    <tr class="table-title">
+                        <td>Criteria</td>
+                        <td>Qtd</td>
+                        <td>Score</td>
+                    </tr>
+                    <tr>
+                        <td>Public Repo</td>
+                        <td id="qtdRepo_user1"></td>
+                        <td id="qtdRepoPontos_user1"></td>
+                    </tr>
+                    <tr>
+                        <td>Followers</td>
+                        <td id="qtdFlw_user1"></td>
+                        <td id="qtdFlwPontos_user1"></td>
+                    </tr>
+                    <tr>
+                        <td>Following</td>
+                        <td id="qtdFlwg_user1"></td>
+                        <td id="qtdFlwgPontos_user1"></td>
+                    </tr>
+                    <tr>
+                        <td>Stars</td>
+                        <td id="qtdStars_user1"></td>
+                        <td id="qtdStarsPontos_user1"></td>
+                    </tr>
+                    <tr>
+                        <td>Gists</td>
+                        <td id="qtdGists_user1"></td>
+                        <td id="qtdGistsPontos_user1"></td>
+                    </tr>
+                </table>
+            </div>
+            <p class="score">Score: <span id="qtdPontos_user1"></span>pts</p>
+        </div>
+        <p class="texto">VS</p>
+        <div class="second-user">
+            <div class="user" id="user2">
+                <img class="profile-pic" id="img_user2" />
+            </div>
+            <div class="card-infos">
+                <table>
+                    <tr class="table-title">
+                        <td>Criteria</td>
+                        <td>Qtd</td>
+                        <td>Score</td>
+                    </tr>
+                    <tr>
+                        <td>Public Repo</td>
+                        <td id="qtdRepo_user2"></td>
+                        <td id="qtdRepoPontos_user2"></td>
+                    </tr>
+                    <tr>
+                        <td>Followers</td>
+                        <td id="qtdFlw_user2"></td>
+                        <td id="qtdFlwPontos_user2"></td>
+                    </tr>
+                    <tr>
+                        <td>Following</td>
+                        <td id="qtdFlwg_user2"></td>
+                        <td id="qtdFlwgPontos_user2"></td>
+                    </tr>
+                    <tr>
+                        <td>Stars</td>
+                        <td id="qtdStars_user2"></td>
+                        <td id="qtdStarsPontos_user2"></td>
+                    </tr>
+                    <tr>
+                        <td>Gists</td>
+                        <td id="qtdGists_user2"></td>
+                        <td id="qtdGistsPontos_user2"></td>
+                    </tr>
+                </table>
+            </div>
+            <p class="score">Score: <span id="qtdPontos_user2"></span>pts</p>
+        </div>
+    </div>
+
+    <script src="../js/resultado.js"></script>
+</body>
+
+</html>

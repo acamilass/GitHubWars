@@ -28,7 +28,10 @@ function Usuario(nome, imagem, repositorio, seguidores, seguindo, estrela, gists
         let totalDePontos = pontuacaoRepositorio + pontuacaoFollowers + pontuacaoSeguindo + pontuacaoEstrela
                             + pontuacaoGist;
         
-        return totalDePontos;
+        return {
+            totalDePontos,
+            pontuacaoRepositorio,        
+        };
     }
 }
 
@@ -52,13 +55,10 @@ botaoLutar.addEventListener('click', function() {
                 //verifica usuario vencedor
                 usuarioVencedor = VerificarVencedor(user1, user2);
                                                
-                if(user1.name==usuarioVencedor.name){
-                    localStorage.setItem('vencedor', JSON.stringify(usuarioVencedor));
-                    localStorage.setItem('perdedor', JSON.stringify(user2));
-                } else {
-                    localStorage.setItem('vencedor', JSON.stringify(usuarioVencedor));
-                    localStorage.setItem('perdedor', JSON.stringify(user1));
-                }
+                localStorage.setItem('vencedor', JSON.stringify(usuarioVencedor));
+                localStorage.setItem('user1', JSON.stringify(user1));
+                localStorage.setItem('user2', JSON.stringify(user2));
+ 
                 window.location = "resultado.html";               
             });          
     });
