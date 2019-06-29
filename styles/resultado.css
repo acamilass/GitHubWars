@@ -1,0 +1,82 @@
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.box > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-top: 50px;
+}
+
+.first-user {
+    /* background-color: aquamarine;  */
+    grid-row: 1 / span 1;
+}
+
+.second-user {
+    /* background-color: bisque; */
+    grid-row: 1 / span 1;
+}
+
+.profile-pic {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.user {
+    position: relative;
+}
+
+.trophy {
+    height: 120px;
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+}
+
+.card-infos {
+    height: 200px;
+    width: 350px;
+    background-color: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
+    transition: all .3s;
+
+    border-radius: 5px;
+    margin: 20px;
+
+    font-size: 14px;
+    padding: 10px;
+}
+
+.card-infos:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+}
+
+.texto {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.table-title {
+    font-weight: bold;
+}
+
+td {
+    padding-right: 50px;
+    padding-bottom: 5px;
+}
+
+.score {
+    font-size: 30px;
+    font-weight: bold;
+}
