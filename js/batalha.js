@@ -32,10 +32,10 @@ function Usuario(nome, imagem, repositorio, seguidores, seguindo, estrela, gists
     }
 }
 
-const botaoLutar = document.getElementById('btnLutar');
-botao.addEventListener('click', function() {
-    let idUsuario1 = "brunasouza2";
-    let idUsuario2 = "caiocss";
+const botaoLutar = document.getElementById('btn');
+botaoLutar.addEventListener('click', function() {
+    let idUsuario1 = document.getElementById('user1').value;
+    let idUsuario2 = document.getElementById('user2').value;
     let url1 = "https://api.github.com/users/"+idUsuario1;
     let url2 = "https://api.github.com/users/"+idUsuario2;
     let user1;
@@ -48,17 +48,26 @@ botao.addEventListener('click', function() {
             getApi(url2, function (json) {         
                 user2 = new Usuario(json.name, json.avatar_url, json.public_repos,
                      json.followers, json.following, 0, json.public_gists);
-                     
+                                          
                 //verifica usuario vencedor
                 usuarioVencedor = VerificarVencedor(user1, user2);
-            })
-        console.log(user1);
-        console.log(user2);       
-    });    
+                                               
+                if(user1.name==usuarioVencedor.name){
+                    localStorage.setItem('vencedor', JSON.stringify(usuarioVencedor));
+                    localStorage.setItem('perdedor', JSON.stringify(user2));
+                } else {
+                    localStorage.setItem('vencedor', JSON.stringify(usuarioVencedor));
+                    localStorage.setItem('perdedor', JSON.stringify(user1));
+                }
+                window.location = "resultado.html";               
+            });          
+    });
+    
+    
 });
 
 function VerificarVencedor(usuario1, usuario2) {
-    if(usuario1.totalDePontos() == usuario2.totalDePontos()){
+    if(usuario1.GetTotalPontos() == usuario2.GetTotalPontos()){
         return "draw";
     }
     else if(usuario1.GetTotalPontos() > usuario2.GetTotalPontos()) {
