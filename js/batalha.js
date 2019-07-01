@@ -9,13 +9,12 @@ function getApi(url,callback){
     xhttp.send();
 }  
 
-function Usuario(nome, imagem, repositorio, seguidores, seguindo, estrela, gists){
+function Usuario(nome, imagem, repositorio, seguidores, seguindo, gists){
     this.nome = nome;
     this.imagem = imagem;
     this.repositorio = repositorio;
     this.seguidores = seguidores;
     this.seguindo = seguindo;
-    this.estrela = estrela;
     this.gists = gists;
     this.GetTotalPontos = () => {
            
@@ -47,10 +46,10 @@ botaoLutar.addEventListener('click', function() {
 
     getApi(url1, function (json) {
         user1 = new Usuario(json.name, json.avatar_url, json.public_repos,
-            json.followers, json.following, 0, json.public_gists);
+            json.followers, json.following, json.public_gists);
             getApi(url2, function (json) {         
                 user2 = new Usuario(json.name, json.avatar_url, json.public_repos,
-                     json.followers, json.following, 0, json.public_gists);
+                     json.followers, json.following, json.public_gists);
                                           
                 //verifica usuario vencedor
                 usuarioVencedor = VerificarVencedor(user1, user2);
